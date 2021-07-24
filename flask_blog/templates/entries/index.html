@@ -10,7 +10,7 @@
 
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('show_entries') }}">@ Flask Blog</a>
+        <a class="navbar-brand" href="{{ url_for('show_entries') }}">Flask Blog</a>
         <button class="navbar-toggler" type="button" data-toggle= "collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,12 +30,12 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ entry.title}}</h5>
-                    <a href="{{ url_for('show_entry', id-entry.id) }}"class="card-link"></a>
+                    <a href="{{ url_for('show_entry', id=entry.id) }}"class="card-link">続きを読む</a>
                 </div>
             </div>
-            {% else %)
+            {% else %}
             投稿がありません
-            {% endfor %)    
+            {% endfor %}
         </ul>
     </div>
 </div>
