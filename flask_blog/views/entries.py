@@ -1,12 +1,26 @@
 from flask import request, redirect, url_for, render_template, flash, session
 from flask_blog import app
-from datetime import datetime
+from datetime import date, datetime
 
 
 @app.route('/')
 def show_entries():
     # 全ての記事を表示
-    return '全ての記事を表示'
+    entries = [
+        {
+            'id': 1,
+            'title': 'はじめての投稿',
+            'text': 'はじめての内容',
+            'created_at': datetime.now(),
+        },
+        {
+            'id': 2,
+            'title': '2つめの投稿',
+            'text': '2つめの内容',
+            'created_at': datetime.now(),
+        }
+    ]
+    return render_template('entries/index.html', entries=entries)
 
 @app.route('/entries', methods=['POST'])
 def add_entry():
