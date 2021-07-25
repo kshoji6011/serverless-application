@@ -64,7 +64,7 @@ def edit_entry(id):
     for e in entries:
         if e['id'] == id:
             entry = e
-    return render_template('entries.edit.html', entry=entry)
+    return render_template('entries/edit.html', entry=entry)
 
 @app.route('/entries/<int:id>/update', methods=['POST'])
 def update_entry(id):
