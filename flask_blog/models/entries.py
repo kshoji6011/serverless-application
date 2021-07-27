@@ -1,6 +1,6 @@
 from datetime import datetime
 from pynamodb.models import Model
-from pynamodb.attributes import UnicodeAttribute, NumberAttribute, UTCDateTimeAttribure
+from pynamodb.attributes import UnicodeAttribute, NumberAttribute, UTCDateTimeAttribute
 from flask_blog import app
 
 class Entry(Model):
@@ -13,4 +13,4 @@ class Entry(Model):
     id = NumberAttribute(hash_key=True, null=False)
     title = UnicodeAttribute(null=True)
     text = UnicodeAttribute(null=True)
-    created_at = UTCDateTimeAttribure(default=datetime.now)
+    created_at = UTCDateTimeAttribute(default=datetime.now)
