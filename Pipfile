@@ -7,6 +7,7 @@ name = "pypi"
 pynamodb = "*"
 flask-script = "*"
 flask = "==1.1.2"
+flask-login = "*"
 
 [dev-packages]
 
