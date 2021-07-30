@@ -24,6 +24,7 @@ def add_entry():
         text=request.form['text']
     )
     entry.save()
+    flash('新しく記事が作成されました')
     return redirect(url_for('show_entries'))
 
 @app.route('/entries/new', methods=['GET'])
@@ -54,6 +55,7 @@ def update_entry(id):
     entry.title = request.form['title']
     entry.text = request.form['text']
     entry.save()
+    flash('記事が更新されました')
     return redirect(url_for('show_entries'))
 
 @app.route('/entries/<int:id>/delete', methods=['POST'])
@@ -62,4 +64,5 @@ def delete_entry(id):
     # 記事の更新処理を実装
     entry = Entry.get(id)
     entry.delete()
+    flash('投稿が削除されました')
     return redirect(url_for('show_entries'))
