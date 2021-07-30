@@ -14,7 +14,8 @@ def login():
         else:
             login_user(User(request.form['username']))
             flash('ログインしました')
-            return render_template('login.html')
+            return redirect(url_for('show_entries'))
+    return render_template('login.html')
 
 
 @app.route('/logout')
